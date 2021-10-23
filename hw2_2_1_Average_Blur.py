@@ -10,8 +10,8 @@ import cv2
 # https://docs.opencv.org/4.5.3/d4/d86/group__imgproc__filter.html
 
 ## Read image file
-img = cv2.imread("l_hires.jpg")
-# img = cv2.imread("test_img.png")
+# img = cv2.imread("l_hires.jpg")
+img = cv2.imread("test_img.png")
 
 filter_size = 7
 convol_size = filter_size//2
@@ -19,8 +19,8 @@ new_img = np.ones_like(img,dtype=np.uint8)
 filter=np.ones((filter_size,filter_size)) # Medium Blur
 filter_sum = np.sum(filter)
 
-# name = "Resize_AverageBlur_{}x{}_to_{}x{}".format(img.shape[0],img.shape[1],new_img.shape[0],new_img.shape[1])
-# print(name)
+name = "Resize_AverageBlur_{}x{}_to_{}x{}".format(img.shape[0],img.shape[1],new_img.shape[0],new_img.shape[1])
+print(name)
 
 filter=np.ones((filter_size,filter_size)) # Average Blur
 for color_clannels in range(img.shape[-1]):
@@ -30,7 +30,7 @@ for color_clannels in range(img.shape[-1]):
                 / (filter_sum)
 
 print("done, show img")
-# cv2.imwrite('{}.tiff'.format(name), new_img)
-cv2.imshow('hello',new_img)
-cv2.waitKey(0)
+cv2.imwrite('{}.png'.format(name), new_img)
+# cv2.imshow('hello',new_img)
+# cv2.waitKey(0)
 

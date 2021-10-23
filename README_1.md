@@ -13,14 +13,24 @@
 * [code](hw2_1_2.py)
 * 更改倍率:`scale = 11.1 # scale of new image`
 ### Result
+
 ![](Resize_LI_241x241_to_482x482.png)
-
-
-
 # 2.  模糊圖片：50%
+## Average Blur
+* [code](hw2_2_1_Average_Blur.py)
+### Result
+![](Resize_AverageBlur_241x241_to_241x241.png)
 
+## Medium Blur
+* [code](hw2_2_2_Median_Blur.py)
+### Result
+![](Resize_MediumB
+lur_241x241_to_241x241.png)
 
-
+## Gaussian Blur
+* [code](hw2_2_3_Gaussian_Blur.py)
+### Result
+![](Resize_GaussianBlur_241x241_to_241x241.png)
 
 # bouns sign name  15%
 

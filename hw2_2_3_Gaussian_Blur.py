@@ -17,8 +17,8 @@ def gaussian (x,mean=0,std=1):
     return ((math.sqrt(2*math.pi)*std)**-1)* math.exp(-0.5*((((x-mean)/std)**2)))
 
 ## Read image file
-img = cv2.imread("l_hires.jpg")
-# img = cv2.imread("test_img.png")
+# img = cv2.imread("l_hires.jpg")
+img = cv2.imread("test_img.png")
 
 filter_size = 5
 convol_size = filter_size//2
@@ -30,7 +30,7 @@ mean = 0
 sum = 0
 
 print(filter_size,convol_size)
-# name = "Resize_GB_{}x{}_to_{}x{}".format(img.shape[0],img.shape[1],new_img.shape[0],new_img.shape[1])
+name = "Resize_GaussianBlur_{}x{}_to_{}x{}".format(img.shape[0],img.shape[1],new_img.shape[0],new_img.shape[1])
 # print(name)
 
 for i in range(filter.shape[0]):
@@ -54,8 +54,8 @@ for color_clannels in range(img.shape[-1]):
 # print(new_img)
 
 print("done, show img")
-# cv2.imwrite('{}.tiff'.format(name), new_img)
-cv2.imshow('hello',new_img)
-cv2.waitKey(0)
+cv2.imwrite('{}.png'.format(name), new_img)
+# cv2.imshow('hello',new_img)
+# cv2.waitKey(0)
 
 

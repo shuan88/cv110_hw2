@@ -19,7 +19,7 @@ new_img = np.ones_like(img,dtype=np.uint8)
 filter=np.ones((filter_size,filter_size)) # Medium Blur
 
 print(filter_size,convol_size)
-# name = "Resize_AverageBlur_{}x{}_to_{}x{}".format(img.shape[0],img.shape[1],new_img.shape[0],new_img.shape[1])
+name = "Resize_MediumBlur_{}x{}_to_{}x{}".format(img.shape[0],img.shape[1],new_img.shape[0],new_img.shape[1])
 # print(name)
 
 for color_clannels in range(img.shape[-1]):
@@ -30,7 +30,8 @@ for color_clannels in range(img.shape[-1]):
 
 # print(new_img)
 print("done, show img")
-# cv2.imwrite('{}.tiff'.format(name), new_img)
-cv2.imshow('hello',new_img)
-cv2.waitKey(0)
+cv2.imwrite('{}.png'.format(name), new_img)
+# cv2.imshow('hello',new_img)
+# cv2.waitKey(0)
+
 
