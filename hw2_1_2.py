@@ -56,7 +56,7 @@ for i in range(new_img.shape[0]):
 
 
 print("done, show img")
-cv2.imwrite('{}.tiff'.format(name), new_img)
+cv2.imwrite('{}.png'.format(name), new_img)
 cv2.imshow('hello',new_img)
 cv2.waitKey(0)
 

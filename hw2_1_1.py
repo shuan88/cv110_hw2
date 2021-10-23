@@ -20,11 +20,13 @@ def sign(src,threshold=128):
 img = cv2.imread("test_img.png")
 print(img.shape[:])
 
-scale = 11.1 # scale of new image
+scale = 2.0 # scale of new image
 new_x = np.int16(img.shape[0]*scale)
 new_y = np.int16(img.shape[1]*scale)
 new_img = np.ones((new_x, new_y,img.shape[-1]),dtype=np.uint8)
 print(new_img.shape[:])
+
+name = "Resize_NN_{}x{}_to_{}x{}".format(img.shape[0],img.shape[1],new_img.shape[0],new_img.shape[1])
 
 for i in range(new_img.shape[0]):
     x_near = np.int16(i/scale)
@@ -33,6 +35,7 @@ for i in range(new_img.shape[0]):
         new_img[i,j,:] = img[x_near,y_near,:]
 
 new_img = sign(new_img)
+cv2.imwrite('{}.png'.format(name), new_img)
 print("done, show img")
 # print(new_img)
 cv2.imshow('hello',new_img)
