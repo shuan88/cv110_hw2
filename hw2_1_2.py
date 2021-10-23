@@ -54,7 +54,6 @@ for i in range(new_img.shape[0]):
             new_img[i,j,:] = img[np.int16(x_near),np.int16(y_near),:]
     
 
-
 print("done, show img")
 cv2.imwrite('{}.png'.format(name), new_img)
 cv2.imshow('hello',new_img)
