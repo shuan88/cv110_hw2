@@ -5,32 +5,38 @@
 # 1. 放大圖片：40%
 ## 1-1 最近鄰：20%
 * [code](hw2_1_1.py)
-* 更改倍率:`scale = 11.1 # scale of new image`
+* 更改倍率:`scale = 2.0`
 ### Result
-![](Resize_NN_241x241_to_482x482.png)
+![](./output/Resize_NN.png)
 
 ## 1-2 線性：20%
 * [code](hw2_1_2.py)
 * 更改倍率:`scale = 11.1 # scale of new image`
 ### Result
+![](output/Resize_Linear.png)
 
-![](Resize_LI_241x241_to_482x482.png)
+
 # 2.  模糊圖片：50%
 ## Average Blur
 * [code](hw2_2_1_Average_Blur.py)
 ### Result
-![](./AverageBlur_F7.png)
+![](./output/AverageBlur_filter7.png)
+![](./output3/AverageBlur_filter5.png)
+![](./myface/AverageBlur_filter5.png)
 
 ## Medium Blur
 * [code](hw2_2_2_Median_Blur.py)
 ### Result
-![](Resize_MediumB
-lur_241x241_to_241x241.png)
+![](./output/MediumBlur_filter7.png)
+![](./output3/MediumBlur_filter5.png)
+![](./myface/MediumBlur_filter5.png)
 
 ## Gaussian Blur
 * [code](hw2_2_3_Gaussian_Blur.py)
 ### Result
-![](Resize_GaussianBlur_241x241_to_241x241.png)
+![](./output/GaussianBlur_filter7.png)
+![](./output3/GaussianBlur_filter5.png)
+![](./myface/GaussianBlur_filter5.png)
 
 # bouns sign name  15%
 
