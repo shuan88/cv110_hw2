@@ -19,7 +19,8 @@ new_img = np.ones_like(img,dtype=np.uint8)
 filter=np.ones((filter_size,filter_size)) # Medium Blur
 filter_sum = np.sum(filter)
 
-name = "Resize_AverageBlur_{}x{}_to_{}x{}".format(img.shape[0],img.shape[1],new_img.shape[0],new_img.shape[1])
+# name = "Resize_AverageBlur_{}x{}_to_{}x{}".format(img.shape[0],img.shape[1],new_img.shape[0],new_img.shape[1])
+name = "AverageBlur_F{}".format(filter_size)
 print(name)
 
 filter=np.ones((filter_size,filter_size)) # Average Blur

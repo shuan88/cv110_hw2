@@ -19,7 +19,7 @@
 ## Average Blur
 * [code](hw2_2_1_Average_Blur.py)
 ### Result
-![](Resize_AverageBlur_241x241_to_241x241.png)
+![](./AverageBlur_F7.png)
 
 ## Medium Blur
 * [code](hw2_2_2_Median_Blur.py)
