@@ -50,6 +50,9 @@
 ### Result
 ![](output/Resize_Linear.png)
 
+<!-- ## 比較線性內插時從不同方向進行內插的結果:5%
+>  -->
+
 
 # 2.  模糊圖片：50%
 [Blur 程式](hw2_Blur.py)
