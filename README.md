@@ -1,6 +1,7 @@
 # cv110_hw2_D0748284
 
 # 1. 放大圖片：40%
+[resize 程式](hw2_resize.py)
 ## 1-1 最近鄰：20%
 * 更改倍率:`scale = 11.1 # scale of new image`
 * function:`nearest_neighbor(input,scale)`
@@ -51,6 +52,7 @@
 
 
 # 2.  模糊圖片：50%
+[Blur 程式](hw2_Blur.py)
 ## Average Blur
 * function:`AverageBlur(img, filter_size)`
 * code:
@@ -68,12 +70,12 @@
     return new_img
     ```
 ### Result
-* use 7*7 Average filter
-![](./output/AverageBlur_filter7.png)
+<!-- * use 7*7 Average filter
+![](./output/AverageBlur_filter7.png) -->
 * use 5*5 Average filter
 ![](./output3/AverageBlur_filter5.png)
-* use 5*5 Average filter
-![](./myface/AverageBlur_filter5.png)
+<!-- * use 5*5 Average filter
+![](./myface/AverageBlur_filter5.png) -->
 
 ## Medium Blur
 
@@ -94,12 +96,12 @@
     ```
 
 ### Result
-* use 7*7 Medium filter
+<!-- * use 7*7 Medium filter
 ![](./output/MediumBlur_filter7.png)
-* use 5*5 Medium filter
+* use 5*5 Medium filter -->
 ![](./output3/MediumBlur_filter5.png)
-* use 5*5 Medium filter
-![](./myface/MediumBlur_filter5.png)
+<!-- * use 5*5 Medium filter
+![](./myface/MediumBlur_filter5.png) -->
 
 ## Gaussian Blur
 
@@ -130,12 +132,17 @@
 
 
 ### Result
-* use 7*7 Gaussian filter
-![](./output/GaussianBlur_filter7.png)
+<!-- * use 7*7 Gaussian filter
+![](./output/GaussianBlur_filter7.png) -->
 * use 5*5 Gaussian filter
 ![](./output3/GaussianBlur_filter5.png)
-* use 5*5 Gaussian filter
-![](./myface/GaussianBlur_filter5.png)
+## 比較分析三種模糊方法在人臉照片下的差別:5%
+
+### Result
+![](./output/Figure_1.png)
+![](./myface/Figure_1.png)
+* 由左至右分別為 AverageBlur,MediumBlur,GaussianBlur
+> 藉由比較結果可以看出在AverageBlur中人臉和背景全部模糊(馬賽克)，而在MediumBlur中人臉會整個區塊有打磨風格(賽璐璐風)，而在GaussianBlur中人臉特徵會是最清楚的。
 
 # bouns sign name  15%
 
