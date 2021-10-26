@@ -144,7 +144,7 @@
 * 由左至右分別為 AverageBlur,MediumBlur,GaussianBlur
 > 藉由比較結果可以看出在AverageBlur中人臉和背景全部模糊(馬賽克)，而在MediumBlur中人臉會整個區塊有打磨風格(賽璐璐風)，而在GaussianBlur中人臉特徵會是最清楚的。
 
-# bouns sign name  15%
+# bouns sign name  10%
 
 
 new_img = sign(new_img)
