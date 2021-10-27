@@ -62,16 +62,20 @@ def linear (input,scale_x,scale_y):
                         + (input[np.int16(x_near+1),np.int16(y_near),:]*(1-xa_wegiht)*ya_wegiht) \
                         + (input[np.int16(x_near),np.int16(y_near+1),:]*(xa_wegiht)*(1-ya_wegiht)) \
                         + (input[np.int16(x_near+1),np.int16(y_near+1),:]*(1-xa_wegiht)*(1-ya_wegiht))
-                        ## A B C D
-                # print(x_near,y_near)
-            # elif (x_near) >= input.shape[0] :
-            #     new_img[i,j,:] = (input[np.int16(x_near),np.int16(y_near),:]*ya_wegiht) \
-            #             + (input[np.int16(x_near),np.int16(y_near+1),:]*(1-ya_wegiht))
-            # elif (y_near) >= input.shape[1] :
-            #     new_img[i,j,:] = (input[np.int16(x_near),np.int16(y_near),:]*xa_wegiht) \
-            #             + (input[np.int16(x_near+1),np.int16(y_near),:]*(1-xa_wegiht))
-            # else:
-            #     new_img[i,j,:] = input[np.int16(x_near),np.int16(y_near),:]
+                # new_img[i,j,:] = (input[np.int16(x_near),np.int16(y_near),:]*xa_wegiht*ya_wegiht) \
+                #         + (input[np.int16(x_near+1),np.int16(y_near),:]*(1-xa_wegiht)*ya_wegiht) \
+                #         + (input[np.int16(x_near),np.int16(y_near+1),:]*(xa_wegiht)*(1-ya_wegiht)) \
+                #         + (input[np.int16(x_near+1),np.int16(y_near+1),:]*(1-xa_wegiht)*(1-ya_wegiht))
+            """
+                # elif (x_near) >= input.shape[0] :
+                #     new_img[i,j,:] = (input[np.int16(x_near),np.int16(y_near),:]*ya_wegiht) \
+                #             + (input[np.int16(x_near),np.int16(y_near+1),:]*(1-ya_wegiht))
+                # elif (y_near) >= input.shape[1] :
+                #     new_img[i,j,:] = (input[np.int16(x_near),np.int16(y_near),:]*xa_wegiht) \
+                #             + (input[np.int16(x_near+1),np.int16(y_near),:]*(1-xa_wegiht))
+                # else:
+                #     new_img[i,j,:] = input[np.int16(x_near),np.int16(y_near),:]
+            """
     return new_img
 
 
@@ -87,9 +91,10 @@ scale = 2.0 # scale of new image
 # name = "./output/Resize_NN"
 
 new_img = sign(linear (img,scale,scale+1.5))
-name = "./output/Resize_Linear"
+# name = "./output/Resize_Linear"
+name = "./output/Resize_Linear_scale{}".format(scale)
 
-# cv2.imwrite('{}.png'.format(name), new_img)
+cv2.imwrite('{}.png'.format(name), new_img)
 
 print("done, show img")
 # print(new_img)

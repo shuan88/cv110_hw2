@@ -31,27 +31,33 @@
         return (Y-A)/abs(B-A)
     ```
     ``` python
-    def linear (input,scale):
-        new_x = np.int16(input.shape[0]*scale)
-        new_y = np.int16(input.shape[1]*scale)
+    def linear (input,scale_x,scale_y):
+        new_x = np.int16(input.shape[0]*scale_x)
+        new_y = np.int16(input.shape[1]*scale_y)
         new_img = np.ones((new_x, new_y,input.shape[-1]),dtype=np.uint8)
         for i in range(new_img.shape[0]):
-            x_near = i/scale
+            x_near = i/scale_x
             xa_wegiht= linear_interpolation (np.int16(x_near),np.int16(x_near+1),x_near)
             for j in range(new_img.shape[1]):
-                y_near = j/scale
+                y_near = j/scale_y
+                # if y_near %1 > 0.0:
                 ya_wegiht= linear_interpolation (np.int16(y_near),np.int16(y_near+1),y_near)
-                new_img[i,j,:] = (input[np.int16(x_near),np.int16(y_near),:]*xa_wegiht*ya_wegiht) \
-                        + (input[np.int16(x_near+1),np.int16(y_near),:]*(1-xa_wegiht)*ya_wegiht) \
-                        + (input[np.int16(x_near),np.int16(y_near+1),:]*(xa_wegiht)*(1-ya_wegiht)) \
-                        + (input[np.int16(x_near+1),np.int16(y_near+1),:]*(1-xa_wegiht)*(1-ya_wegiht))
+                # new_input[i,j,:] = input[x_near,y_near,:]
+                if (x_near+1) < input.shape[0] and (y_near+1) < input.shape[1]:
+                    new_img[i,j,:] = (input[np.int16(x_near),np.int16(y_near),:]*xa_wegiht*ya_wegiht) \
+                            + (input[np.int16(x_near+1),np.int16(y_near),:]*(1-xa_wegiht)*ya_wegiht) \
+                            + (input[np.int16(x_near),np.int16(y_near+1),:]*(xa_wegiht)*(1-ya_wegiht)) \
+                            + (input[np.int16(x_near+1),np.int16(y_near+1),:]*(1-xa_wegiht)*(1-ya_wegiht))
         return new_img
     ```
 ### Result
 ![](output/Resize_Linear.png)
 
-<!-- ## 比較線性內插時從不同方向進行內插的結果:5%
->  -->
+## 比較線性內插時從不同方向進行內插的結果:5%
+> 計算權重公式: $(A * wegiht_{x}*wegiht_{y})+ (B * wegiht_{x}^* *wegiht_{y}) + (C * wegiht_{x} * wegiht_{y}^*) + (D * wegiht_{x}^* * wegiht_{y}^*)$ 
+
+> 交換方向：$(A *wegiht_{y} * wegiht_{x})+ (B *wegiht_{y} * wegiht_{x}^* ) + (C  * wegiht_{y}^* * wegiht_{x}) + (D * wegiht_{y}^* * wegiht_{x}^*)$
+> 計算結果可知兩者出來得結果"理論"相同
 
 
 # 2.  模糊圖片：50%
@@ -163,3 +169,6 @@ def sign(src,threshold=128):
                 src[name_img.shape[0]+i,name_img.shape[1]+j,:] = [255,255,255]
     return src
 ```
+
+## 心得討論
+這次的
