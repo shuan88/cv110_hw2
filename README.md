@@ -3,18 +3,18 @@
 # 1. 放大圖片：40%
 [resize 程式](hw2_resize.py)
 ## 1-1 最近鄰：20%
-* 更改倍率:`scale = 11.1 # scale of new image`
-* function:`nearest_neighbor(input,scale)`
+* 更改倍率:`scale_x,scale_y`
+* function:`nearest_neighbor(input,scale_x,scale_y)`
 * code:
     ``` python
-    def nearest_neighbor(input,scale):
-        new_x = np.int16(input.shape[0]*scale)
-        new_y = np.int16(input.shape[1]*scale)
+    def nearest_neighbor(input,scale_x,scale_y):
+        new_x = np.int16(input.shape[0]*scale_x)
+        new_y = np.int16(input.shape[1]*scale_y)
         new_img = np.ones((new_x, new_y,input.shape[-1]),dtype=np.uint8)
         for i in range(new_img.shape[0]):
-            x_near = np.int16(i/scale)
+            x_near = np.int16(i/scale_x)
             for j in range(new_img.shape[1]):
-                y_near = np.int16(j/scale)
+                y_near = np.int16(j/scale_y)
                 new_img[i,j,:] = input[x_near,y_near,:]
         return new_img
     ```
@@ -22,8 +22,8 @@
 ![](./output/Resize_NN.png)
 
 ## 1-2 線性：20%
-* 更改倍率:`scale = 2.0`
-* function:`linear(input,scale)`
+* 更改倍率:`scale_x,scale_y`
+* function:`linear(input,scale_x,scale_y)`
 * code:
     ``` python
     ## count weight index
