@@ -80,7 +80,7 @@ plt.axis('off')
 
 new_img = magnitude(new_img_x , new_img_y) # x
 ax3 = fig.add_subplot(1,3,3)
-ax3.imshow(cv2.cvtColor(new_img_x, cv2.COLOR_BGR2RGB))
+ax3.imshow(cv2.cvtColor(new_img, cv2.COLOR_BGR2RGB))
 plt.axis('off')
 
 
