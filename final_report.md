@@ -18,6 +18,9 @@
 ### Result (my vs cv2)
 ![](result/new_235.png)
 
+### Hough_Transform
+![](Hough_Transform_img/new_235.png)
+
 ---
 
 ## input image 2
@@ -29,6 +32,10 @@
 
 ### Result (my vs cv2)
 ![](result/exit_lab.png)
+
+### Hough_Transform
+![](Hough_Transform_img/exit_lab.png)
+
 
 
 ## face
