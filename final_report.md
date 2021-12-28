@@ -280,3 +280,6 @@ for rho,theta in high_threshold_point:
     y0 = np.int(y0)
     img = cv2.line(img, (x0,0), (0,y0) , (255,255,0))
 ```
+
+# 心得
+我覺得電腦視覺的作業比較難，今年要畢業了希望給老師下屆出的作業可以再難一點
